@@ -1,0 +1,17 @@
+'''Exercise 1: Sentence Analysis (Character & Word Count)
+Write a Python program that prompts the user to enter a sentence. The program must count and display:
+The total number of characters (including spaces and punctuation).
+The total number of words.'''
+
+def count_display():
+    string=input('Enter a Sentence :')
+    count=0
+    for _ in string:
+        count += 1
+    print('Total Characters :',count)
+    if string.strip()!='':
+        word_count=len(string.split())
+        print('Total Words :',word_count)
+    else:
+        print('Total Words :0')
+count_display()
