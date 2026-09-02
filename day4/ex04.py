@@ -18,12 +18,12 @@ def process_order(catalog,order):
         if v>stk:
             raise OutOfStockError( f"Product '{k}' is out of stock. " f"Requested: {v}, Available: {stk}." )
     total=0.0
-    for k,v in order.items(): 
+   for k,v in order.items(): 
         price = catalog[k]["price"] 
-        catalog[k]["stock"] -= v 
-        total += price * v 
+        if v<=stk :
+         catalog[k]["stock"] -= v 
+         total += price * v 
     return total
-
 def main():
     catalog = {
     "P01": {"price": 100.0, "stock": 5},
